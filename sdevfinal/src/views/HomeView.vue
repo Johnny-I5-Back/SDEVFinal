@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="page-wrap">
+    <ProductsGrid :products="products" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { products } from '../fake-data';
+import ProductsGrid from '../components/ProductsGrid.vue';
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+    name: 'ProductsPage',
+    components: {
+      ProductsGrid,
+    },
+    data() {
+      return {
+        products,
+      };
+    }
+};
 </script>
+
+ 
