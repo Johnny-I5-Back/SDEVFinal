@@ -1,32 +1,30 @@
 <template>
-  <div id="page-wrap" v-if="product">
+  <div id="page-wrap" v-if="course">
     <div id="img-wrap">
-      <img v-bind:src="product.imageUrl" />
+      <img v-bind:src="course.imageUrl" />
     </div>
-    <div id="product-details">
-      <h1>{{ product.name }}</h1>
-      <h3 id="price">${{ product.price }}</h3>
-      <p>Average rating: {{ product.averageRating }}</p>
-      <button id="add-to-cart">Add to Cart</button>
+    <div id="course-details">
+      <h1>{{ course.title }}</h1>
+      <h3 id="price">Subject: {{ course.subject }}</h3>
+      <p>Credit Hours: {{ course.credits }}</p>
       <h4>Description</h4>
-      <p>{{ product.description }}</p>
+      <p>{{ course.description }}</p>
+      <button id="add-to-cart">Add to Cart</button>
     </div>
   </div>
   <NotFoundPage v-else/>
 </template>
 
 <script>
-import { products } from '../fake-data';
-import NotFoundPage from './NotFoundPage';
+import { courses } from '../test-data';
 
 export default {
-    name: 'ProductDetailPage',
+    name: 'CourseDetailPage',
     components: {
-      NotFoundPage,
     },
     data() {
       return {
-        product: products.find((p) => p.id === this.$route.params.id),
+        course: courses.find((p) => p.id === this.$route.params.id),
       };
     }
 };
@@ -47,13 +45,14 @@ export default {
     width: 400px;
   }
 
-  #product-details {
+  #course-details {
     padding: 16px;
     position: relative;
   }
 
   #add-to-cart {
-    width: 100%;
+    width: 50%;
+    background-color: lightblue;
   }
 
   #price {

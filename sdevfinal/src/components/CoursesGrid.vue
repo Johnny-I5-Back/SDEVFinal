@@ -1,20 +1,20 @@
 <template>
   <div class="grid-wrap">
-    <ProductsGridItem
-        v-for="product in products"
-        :key="product.id"
-        :product="product" />
+    <CoursesGridItem
+        v-for="course in courses"
+        :key="course.id"
+        :course="course" />
   </div>
 </template>
 
 <script>
-import ProductsGridItem from './ProductsGridItem.vue';
+import CoursesGridItem from './CoursesGridItem.vue';
 
 export default {
-    name: 'ProductsGrid',
-    props: ['products'],
+    name: 'CoursesGrid',
+    props: ['courses'],
     components: {
-        ProductsGridItem,
+        CoursesGridItem,
     },
 }
 </script>

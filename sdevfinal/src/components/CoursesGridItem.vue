@@ -1,23 +1,23 @@
 <template>
-    <div class="product-item">
-        <img v-bind:src="product.imageUrl" />
-        <h3 class="product-name">{{ product.name }}</h3>
-        <p class="product-price">${{ product.price }}</p>
-        <router-link v-bind:to="'/products/' + product.id">
-            <button>View Details</button>
+    <div class="course-item">
+        <img v-bind:src="course.imageUrl" />
+        <h3 class="course-name">{{ course.title }}</h3>
+        <p class="course-price">{{ course.subject }}</p>
+        <router-link v-bind:to="'/courses/' + course.id">
+            <button>View Course Details</button>
         </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'ProductsGridItem',
-    props: ['product'],
+    name: 'CoursesGridItem',
+    props: ['course'],
 }
 </script>
 
 <style scoped>
-.product-item {
+.course-item {
     align-items: center;
     border-radius: 8px;
     box-shadow: 0px 2px 5px #888;
@@ -29,7 +29,7 @@ export default {
     width: 32%;
   }
 
-  .product-name {
+  .course-name {
     margin-bottom: 0;
   }
 

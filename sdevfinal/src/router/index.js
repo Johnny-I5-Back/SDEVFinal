@@ -1,31 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-import HomeView from '../views/HomeView.vue'
-import CourseSection from '../views/CourseSection.vue';
+import CartPage from '../views/CartPage.vue';
 import CourseDetailPage from '../views/CourseDetailPage.vue';
-import SignIn from '../views/SignIn.vue';
+import CoursesPage from '../views/CoursesPage.vue';
+import SignIn from '../views/SignIn.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: HomeView,
-  },{
     path: '/courses',
-    name: 'Courses',
-    component: CourseSection,
+    name: 'courses',
+    component: CoursesPage,
   }, {
     path: '/courses/:id',
-    name: 'CourseDetail',
+    name: 'courseDetail',
     component: CourseDetailPage,
   }, {
+    path: '/cart',
+    name: 'Cart',
+    component: CartPage,
+  }, {
+    path: '/',
+    redirect: '/courses',
+  },{
     path: '/sign-in',
-    name: 'Sign In',
-    component: SignIn,
-  },
+    name: 'SignIn',
+    component: SignIn
+  }
 ]
 
 const router = new VueRouter({

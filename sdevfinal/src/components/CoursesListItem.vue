@@ -1,9 +1,9 @@
 <template>
-    <div class="product-container">
-      <img class="product-image" :src="product.imageUrl" />
+    <div class="course-container">
+      <img class="course-image" :src="course.imageUrl" />
       <div class="details-wrap">
-        <h3>{{ product.name }}</h3>
-        <p>${{ product.price }}</p>
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.subject }}</p>
       </div>
       <button class="remove-button">Remove From Cart</button>
     </div>
@@ -11,13 +11,13 @@
 
 <script>
 export default {
-    name: 'ProductsListItem',
-    props: ['product'],
+    name: 'CoursesListItem',
+    props: ['course'],
 }
 </script>
 
 <style scoped>
-  .product-container {
+  .course-container {
     align-content: 'center';
     border-bottom: 1px solid #ddd;
     display: flex;
@@ -25,7 +25,7 @@ export default {
     width: 100%;
   }
 
-  .product-image {
+  .course-image {
     flex: 1;
     height: 100px;
     max-width: 100px;
